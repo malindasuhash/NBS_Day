@@ -18,4 +18,6 @@ Simple placeholder.
  - 4MB message size, including headers. 
  - Headers can be set at message or for all messages.
  - Message pipe line can attach multiple handlers.
- - 
+ - Beaware of the IManageUnitsOfWork, this is changing in V5.
+ - IMessageMutators pulg in to messages that is sent out/in.
+ - IMutateTransportMessages, this can be used for provide message level transport work (e.g. ProtoBuf)
