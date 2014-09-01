@@ -16,6 +16,10 @@ namespace HelloWorldServer
         public void Init()
         {
             Configure.Serialization.Xml(s => s.Namespace("http://www.easyjet2.com/"));
+
+            Configure.With()
+                     .DefaultBuilder()
+                     .RunCustomAction(() => Configure.Instance.Configurer.ConfigureComponent<SaySomething>(DependencyLifecycle.SingleInstance));
         }
 
         public void SpecifyOrder(Order order)

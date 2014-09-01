@@ -11,7 +11,7 @@ namespace Messages
         {
             // Gets the username from the header.
             // Returns null if the item is not found.
-            var username = Bus.GetMessageHeader(message, "Username1");
+            var username = Bus.GetMessageHeader(message, "Username");
 
             if (!IsAuthorised(username))
             {
