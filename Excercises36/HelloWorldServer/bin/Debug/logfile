@@ -117,3 +117,124 @@ MessageDrivenSubscriptions [4.6.4] - Enabled
 2014-09-01 11:58:55,694 [1] INFO  NServiceBus.Satellites.SatelliteLauncher [(null)] <(null)> - Started 1/3 NServiceBus.Timeout.Hosting.Windows.TimeoutMessageProcessor, NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
 2014-09-01 11:58:55,701 [11] INFO  NServiceBus.Satellites.SatelliteLauncher [(null)] <(null)> - Started 2/3 NServiceBus.Timeout.Hosting.Windows.TimeoutDispatcherProcessor, NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
 2014-09-01 11:58:57,767 [12] INFO  RequestHandler [(null)] <(null)> - SAY SOMETHING!!
+2014-09-01 13:44:27,914 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfiguration completed in 0.19 s
+2014-09-01 13:44:28,014 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.INeedInitialization completed in 0.00 s
+2014-09-01 13:44:28,024 [1] INFO  NServiceBus.Licensing.LicenseManager [(null)] <(null)> - Trial for Particular Service Platform is still active, trial expires on 15/09/2014. Configuring NServiceBus to run in trial mode.
+2014-09-01 13:44:28,083 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.INeedInitialization completed in 0.07 s
+2014-09-01 13:44:29,513 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfigurationIsFinalized completed in 1.43 s
+2014-09-01 13:44:29,600 [1] INFO  NServiceBus.Features.Sagas [(null)] <(null)> - The saga feature was enabled but no saga implementations could be found. No need to enable the configured saga persister
+2014-09-01 13:44:29,611 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Features: 
+Audit [4.6.4] - Enabled
+AutoSubscribe [4.6.4] - Enabled
+BinarySerialization [4.6.4] - Controlled by category Serializers
+BsonSerialization [4.6.4] - Controlled by category Serializers
+JsonSerialization [4.6.4] - Controlled by category Serializers
+XmlSerialization [4.6.4] - Controlled by category Serializers
+MsmqTransport [4.6.4] - Enabled
+Gateway [4.6.4] - Disabled
+TimeoutManager [4.6.4] - Enabled
+Sagas [4.6.4] - Enabled
+SecondLevelRetries [4.6.4] - Enabled
+StorageDrivenPublisher [4.6.4] - Disabled
+MessageDrivenSubscriptions [4.6.4] - Enabled
+
+2014-09-01 13:44:29,626 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Feature categories: 
+   - Serializers
+       * BinarySerialization - Disabled
+       * BsonSerialization - Disabled
+       * JsonSerialization - Disabled
+       * XmlSerialization - Enabled
+
+2014-09-01 13:44:29,711 [1] FATAL NServiceBus.Hosting.GenericHost [(null)] <(null)> - Exception when starting endpoint.
+System.InvalidCastException: Object must implement IConvertible.
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at HelloWorldServer.EndpointConfig.SetupTTL(Type t) in c:\NSB\NBS_Day\Excercises36\HelloWorldServer\EndpointConfig.cs:line 31
+   at NServiceBus.Unicast.Messages.MessageMetadataRegistry.RegisterMessageType(Type messageType) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Unicast\Messages\MessageMetadataRegistry.cs:line 79
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration.ConfigureMessageRegistry(List`1 knownMessages) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Unicast\Config\FinalizeUnicastBusConfiguration.cs:line 92
+   at NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration.FinalizeConfiguration() in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Unicast\Config\FinalizeUnicastBusConfiguration.cs:line 24
+   at NServiceBus.Configure.<Initialize>b__13(IFinalizeConfiguration t) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 359
+   at NServiceBus.Configure.<>c__DisplayClass23`1.<ActivateAndInvoke>b__20(Type t) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 555
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at NServiceBus.Configure.ForAllTypes[T](Action`1 action) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 379
+   at NServiceBus.Configure.ActivateAndInvoke[T](Action`1 action, Nullable`1 thresholdForWarning) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 549
+   at NServiceBus.Configure.Initialize() in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 359
+   at NServiceBus.Configure.CreateBus() in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 295
+   at NServiceBus.Hosting.GenericHost.Start() in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Hosting\GenericHost.cs:line 72
+2014-09-01 13:45:45,453 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfiguration completed in 0.21 s
+2014-09-01 13:45:45,563 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.INeedInitialization completed in 0.00 s
+2014-09-01 13:45:45,573 [1] INFO  NServiceBus.Licensing.LicenseManager [(null)] <(null)> - Trial for Particular Service Platform is still active, trial expires on 15/09/2014. Configuring NServiceBus to run in trial mode.
+2014-09-01 13:45:45,636 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.INeedInitialization completed in 0.07 s
+2014-09-01 13:45:47,123 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfigurationIsFinalized completed in 1.49 s
+2014-09-01 13:45:47,218 [1] INFO  NServiceBus.Features.Sagas [(null)] <(null)> - The saga feature was enabled but no saga implementations could be found. No need to enable the configured saga persister
+2014-09-01 13:45:47,229 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Features: 
+Audit [4.6.4] - Enabled
+AutoSubscribe [4.6.4] - Enabled
+BinarySerialization [4.6.4] - Controlled by category Serializers
+BsonSerialization [4.6.4] - Controlled by category Serializers
+JsonSerialization [4.6.4] - Controlled by category Serializers
+XmlSerialization [4.6.4] - Controlled by category Serializers
+MsmqTransport [4.6.4] - Enabled
+Gateway [4.6.4] - Disabled
+TimeoutManager [4.6.4] - Enabled
+Sagas [4.6.4] - Enabled
+SecondLevelRetries [4.6.4] - Enabled
+StorageDrivenPublisher [4.6.4] - Disabled
+MessageDrivenSubscriptions [4.6.4] - Enabled
+
+2014-09-01 13:45:47,242 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Feature categories: 
+   - Serializers
+       * BinarySerialization - Disabled
+       * BsonSerialization - Disabled
+       * JsonSerialization - Disabled
+       * XmlSerialization - Enabled
+
+2014-09-01 13:45:47,277 [1] INFO  NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration [(null)] <(null)> - Number of messages found: 2
+2014-09-01 13:45:47,283 [1] INFO  NServiceBus.Config.InfrastructureServices [(null)] <(null)> - Infrastructure service NServiceBus.AutomaticSubscriptions.IAutoSubscriptionStrategy was found in the container and will be used instead of the default
+2014-09-01 13:45:47,288 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.IFinalizeConfiguration completed in 0.15 s
+2014-09-01 13:45:48,105 [1] INFO  NServiceBus.ConfigureRavenPersistence [(null)] <(null)> - Connection to RavenDB at http://localhost:8080 verified. Detected version: Product version: 2.0.3 / 5a4b7ea, Build version: 2375
+2014-09-01 13:45:51,368 [1] INFO  NServiceBus.Installation.PerformanceMonitorUsersInstaller [(null)] <(null)> - Skipped adding user 'smt68\student' to group 'Performance Monitor Users' because the user is already in group.
+2014-09-01 13:45:51,373 [1] INFO  NServiceBus.Persistence.Raven.RavenUserInstaller [(null)] <(null)> - Adding user 'smt68\student' to raven. Instance:'http://localhost:8080', Database:'HelloWorldServer'.
+2014-09-01 13:45:51,985 [8] INFO  NServiceBus.Satellites.SatelliteLauncher [(null)] <(null)> - Started 1/3 NServiceBus.Timeout.Hosting.Windows.TimeoutMessageProcessor, NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2014-09-01 13:45:51,985 [1] INFO  NServiceBus.Satellites.SatelliteLauncher [(null)] <(null)> - Started 3/3 NServiceBus.SecondLevelRetries.SecondLevelRetriesProcessor, NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2014-09-01 13:45:51,994 [9] INFO  NServiceBus.Satellites.SatelliteLauncher [(null)] <(null)> - Started 2/3 NServiceBus.Timeout.Hosting.Windows.TimeoutDispatcherProcessor, NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2014-09-01 13:45:54,290 [11] INFO  RequestHandler [(null)] <(null)> - SAY SOMETHING!!
+2014-09-01 13:56:15,426 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfiguration completed in 0.21 s
+2014-09-01 13:56:15,534 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.INeedInitialization completed in 0.00 s
+2014-09-01 13:56:15,545 [1] INFO  NServiceBus.Licensing.LicenseManager [(null)] <(null)> - Trial for Particular Service Platform is still active, trial expires on 15/09/2014. Configuring NServiceBus to run in trial mode.
+2014-09-01 13:56:15,604 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.INeedInitialization completed in 0.07 s
+2014-09-01 13:56:17,073 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfigurationIsFinalized completed in 1.47 s
+2014-09-01 13:56:17,172 [1] INFO  NServiceBus.Features.Sagas [(null)] <(null)> - The saga feature was enabled but no saga implementations could be found. No need to enable the configured saga persister
+2014-09-01 13:56:17,182 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Features: 
+Audit [4.6.4] - Enabled
+AutoSubscribe [4.6.4] - Enabled
+BinarySerialization [4.6.4] - Controlled by category Serializers
+BsonSerialization [4.6.4] - Controlled by category Serializers
+JsonSerialization [4.6.4] - Controlled by category Serializers
+XmlSerialization [4.6.4] - Controlled by category Serializers
+MsmqTransport [4.6.4] - Enabled
+Gateway [4.6.4] - Disabled
+TimeoutManager [4.6.4] - Enabled
+Sagas [4.6.4] - Enabled
+SecondLevelRetries [4.6.4] - Enabled
+StorageDrivenPublisher [4.6.4] - Disabled
+MessageDrivenSubscriptions [4.6.4] - Enabled
+
+2014-09-01 13:56:17,202 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Feature categories: 
+   - Serializers
+       * BinarySerialization - Disabled
+       * BsonSerialization - Disabled
+       * JsonSerialization - Disabled
+       * XmlSerialization - Enabled
+
+2014-09-01 13:56:17,236 [1] INFO  NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration [(null)] <(null)> - Number of messages found: 2
+2014-09-01 13:56:17,243 [1] INFO  NServiceBus.Config.InfrastructureServices [(null)] <(null)> - Infrastructure service NServiceBus.AutomaticSubscriptions.IAutoSubscriptionStrategy was found in the container and will be used instead of the default
+2014-09-01 13:56:17,250 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.IFinalizeConfiguration completed in 0.17 s
+2014-09-01 13:56:18,139 [1] INFO  NServiceBus.ConfigureRavenPersistence [(null)] <(null)> - Connection to RavenDB at http://localhost:8080 verified. Detected version: Product version: 2.0.3 / 5a4b7ea, Build version: 2375
+2014-09-01 13:56:22,103 [1] INFO  NServiceBus.Installation.PerformanceMonitorUsersInstaller [(null)] <(null)> - Skipped adding user 'smt68\student' to group 'Performance Monitor Users' because the user is already in group.
+2014-09-01 13:56:22,107 [1] INFO  NServiceBus.Persistence.Raven.RavenUserInstaller [(null)] <(null)> - Adding user 'smt68\student' to raven. Instance:'http://localhost:8080', Database:'HelloWorldServer'.
+2014-09-01 13:56:22,754 [8] INFO  NServiceBus.Satellites.SatelliteLauncher [(null)] <(null)> - Started 3/3 NServiceBus.SecondLevelRetries.SecondLevelRetriesProcessor, NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2014-09-01 13:56:22,769 [1] INFO  NServiceBus.Satellites.SatelliteLauncher [(null)] <(null)> - Started 1/3 NServiceBus.Timeout.Hosting.Windows.TimeoutMessageProcessor, NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2014-09-01 13:56:22,775 [9] INFO  NServiceBus.Satellites.SatelliteLauncher [(null)] <(null)> - Started 2/3 NServiceBus.Timeout.Hosting.Windows.TimeoutDispatcherProcessor, NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2014-09-01 13:56:25,002 [11] INFO  RequestHandler [(null)] <(null)> - SAY SOMETHING!!

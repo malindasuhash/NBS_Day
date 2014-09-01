@@ -10,7 +10,7 @@ namespace HelloWorld
         
         public void Start()
         {
-            var msg = new RequestMessage()
+            var msg = new Request()
                 {
                     SaySomething = "SAY SOMETHING!!"
                 };

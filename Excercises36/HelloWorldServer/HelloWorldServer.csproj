@@ -56,6 +56,10 @@
     <Compile Include="RequestHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Conventions\Conventions.csproj">
+      <Project>{20f93b32-a0db-4467-9f71-dd4ef55be5e2}</Project>
+      <Name>Conventions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Messages\Messages.csproj">
       <Project>{05e8dc9e-3f7e-4dc7-9100-0d893aee6862}</Project>
       <Name>Messages</Name>

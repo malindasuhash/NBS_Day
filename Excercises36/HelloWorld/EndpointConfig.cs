@@ -1,4 +1,6 @@
 
+using System;
+using System.Linq;
 using Messages;
 
 namespace HelloWorld
@@ -15,9 +17,6 @@ namespace HelloWorld
         {
             // Changes the namespace in the message itself.
             Configure.Serialization.Xml(s => s.Namespace("http://www.easyjet.com/"));
-
-            // Convention used to resolve the message...
-            Configure.With().DefiningMessagesAs(m => m.Assembly == typeof(RequestMessage).Assembly && m.Name.EndsWith("Message"));
         }
     }
 }

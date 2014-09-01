@@ -457,3 +457,185 @@ MessageDrivenSubscriptions [4.6.4] - Enabled
 2014-09-01 11:58:51,009 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.IFinalizeConfiguration completed in 0.12 s
 2014-09-01 11:58:53,610 [1] INFO  NServiceBus.Installation.PerformanceMonitorUsersInstaller [(null)] <(null)> - Skipped adding user 'smt68\student' to group 'Performance Monitor Users' because the user is already in group.
 2014-09-01 11:58:54,420 [13] INFO  MessageSender [(null)] <(null)> - Sent message.
+2014-09-01 13:44:27,273 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfiguration completed in 0.21 s
+2014-09-01 13:44:27,405 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.INeedInitialization completed in 0.00 s
+2014-09-01 13:44:27,417 [1] INFO  NServiceBus.Licensing.LicenseManager [(null)] <(null)> - Trial for Particular Service Platform is still active, trial expires on 15/09/2014. Configuring NServiceBus to run in trial mode.
+2014-09-01 13:44:27,480 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.INeedInitialization completed in 0.07 s
+2014-09-01 13:44:27,486 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature TimeoutManager has been explicitly disabled
+2014-09-01 13:44:27,490 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature SecondLevelRetries has been explicitly disabled
+2014-09-01 13:44:29,770 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfigurationIsFinalized completed in 2.29 s
+2014-09-01 13:44:29,828 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Features: 
+Audit [4.6.4] - Enabled
+AutoSubscribe [4.6.4] - Enabled
+BinarySerialization [4.6.4] - Controlled by category Serializers
+BsonSerialization [4.6.4] - Controlled by category Serializers
+JsonSerialization [4.6.4] - Controlled by category Serializers
+XmlSerialization [4.6.4] - Controlled by category Serializers
+MsmqTransport [4.6.4] - Enabled
+Gateway [4.6.4] - Disabled
+TimeoutManager [4.6.4] - Disabled
+Sagas [4.6.4] - Disabled
+SecondLevelRetries [4.6.4] - Disabled
+StorageDrivenPublisher [4.6.4] - Disabled
+MessageDrivenSubscriptions [4.6.4] - Enabled
+
+2014-09-01 13:44:29,842 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Feature categories: 
+   - Serializers
+       * BinarySerialization - Disabled
+       * BsonSerialization - Disabled
+       * JsonSerialization - Disabled
+       * XmlSerialization - Enabled
+
+2014-09-01 13:44:51,344 [1] FATAL NServiceBus.Hosting.GenericHost [(null)] <(null)> - Exception when starting endpoint.
+System.InvalidCastException: Object must implement IConvertible.
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at HelloWorld.EndpointConfig.SetupTTL(Type t) in c:\NSB\NBS_Day\Excercises36\HelloWorld\EndpointConfig.cs:line 31
+   at NServiceBus.Unicast.Messages.MessageMetadataRegistry.RegisterMessageType(Type messageType) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Unicast\Messages\MessageMetadataRegistry.cs:line 79
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration.ConfigureMessageRegistry(List`1 knownMessages) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Unicast\Config\FinalizeUnicastBusConfiguration.cs:line 92
+   at NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration.FinalizeConfiguration() in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Unicast\Config\FinalizeUnicastBusConfiguration.cs:line 24
+   at NServiceBus.Configure.<Initialize>b__13(IFinalizeConfiguration t) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 359
+   at NServiceBus.Configure.<>c__DisplayClass23`1.<ActivateAndInvoke>b__20(Type t) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 555
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at NServiceBus.Configure.ForAllTypes[T](Action`1 action) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 379
+   at NServiceBus.Configure.ActivateAndInvoke[T](Action`1 action, Nullable`1 thresholdForWarning) in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 549
+   at NServiceBus.Configure.Initialize() in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 359
+   at NServiceBus.Configure.CreateBus() in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Configure.cs:line 295
+   at NServiceBus.Hosting.GenericHost.Start() in c:\BuildAgent\work\31f8c64a6e8a2d7c\src\NServiceBus.Core\Hosting\GenericHost.cs:line 72
+2014-09-01 13:45:45,267 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfiguration completed in 0.20 s
+2014-09-01 13:45:45,389 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.INeedInitialization completed in 0.00 s
+2014-09-01 13:45:45,401 [1] INFO  NServiceBus.Licensing.LicenseManager [(null)] <(null)> - Trial for Particular Service Platform is still active, trial expires on 15/09/2014. Configuring NServiceBus to run in trial mode.
+2014-09-01 13:45:45,464 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.INeedInitialization completed in 0.07 s
+2014-09-01 13:45:45,470 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature TimeoutManager has been explicitly disabled
+2014-09-01 13:45:45,474 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature SecondLevelRetries has been explicitly disabled
+2014-09-01 13:45:47,104 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfigurationIsFinalized completed in 1.64 s
+2014-09-01 13:45:47,169 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Features: 
+Audit [4.6.4] - Enabled
+AutoSubscribe [4.6.4] - Enabled
+BinarySerialization [4.6.4] - Controlled by category Serializers
+BsonSerialization [4.6.4] - Controlled by category Serializers
+JsonSerialization [4.6.4] - Controlled by category Serializers
+XmlSerialization [4.6.4] - Controlled by category Serializers
+MsmqTransport [4.6.4] - Enabled
+Gateway [4.6.4] - Disabled
+TimeoutManager [4.6.4] - Disabled
+Sagas [4.6.4] - Disabled
+SecondLevelRetries [4.6.4] - Disabled
+StorageDrivenPublisher [4.6.4] - Disabled
+MessageDrivenSubscriptions [4.6.4] - Enabled
+
+2014-09-01 13:45:47,189 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Feature categories: 
+   - Serializers
+       * BinarySerialization - Disabled
+       * BsonSerialization - Disabled
+       * JsonSerialization - Disabled
+       * XmlSerialization - Enabled
+
+2014-09-01 13:45:47,248 [1] INFO  NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration [(null)] <(null)> - Number of messages found: 2
+2014-09-01 13:45:47,253 [1] INFO  NServiceBus.Config.InfrastructureServices [(null)] <(null)> - Infrastructure service NServiceBus.AutomaticSubscriptions.IAutoSubscriptionStrategy was found in the container and will be used instead of the default
+2014-09-01 13:45:47,260 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.IFinalizeConfiguration completed in 0.14 s
+2014-09-01 13:45:49,700 [1] INFO  NServiceBus.Installation.PerformanceMonitorUsersInstaller [(null)] <(null)> - Skipped adding user 'smt68\student' to group 'Performance Monitor Users' because the user is already in group.
+2014-09-01 13:45:50,654 [13] INFO  MessageSender [(null)] <(null)> - Sent message.
+2014-09-01 13:46:12,501 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfiguration completed in 0.18 s
+2014-09-01 13:46:12,618 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.INeedInitialization completed in 0.00 s
+2014-09-01 13:46:12,628 [1] INFO  NServiceBus.Licensing.LicenseManager [(null)] <(null)> - Trial for Particular Service Platform is still active, trial expires on 15/09/2014. Configuring NServiceBus to run in trial mode.
+2014-09-01 13:46:12,684 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.INeedInitialization completed in 0.06 s
+2014-09-01 13:46:12,690 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature TimeoutManager has been explicitly disabled
+2014-09-01 13:46:12,693 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature SecondLevelRetries has been explicitly disabled
+2014-09-01 13:46:14,184 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfigurationIsFinalized completed in 1.50 s
+2014-09-01 13:46:14,227 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Features: 
+Audit [4.6.4] - Enabled
+AutoSubscribe [4.6.4] - Enabled
+BinarySerialization [4.6.4] - Controlled by category Serializers
+BsonSerialization [4.6.4] - Controlled by category Serializers
+JsonSerialization [4.6.4] - Controlled by category Serializers
+XmlSerialization [4.6.4] - Controlled by category Serializers
+MsmqTransport [4.6.4] - Enabled
+Gateway [4.6.4] - Disabled
+TimeoutManager [4.6.4] - Disabled
+Sagas [4.6.4] - Disabled
+SecondLevelRetries [4.6.4] - Disabled
+StorageDrivenPublisher [4.6.4] - Disabled
+MessageDrivenSubscriptions [4.6.4] - Enabled
+
+2014-09-01 13:46:14,239 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Feature categories: 
+   - Serializers
+       * BinarySerialization - Disabled
+       * BsonSerialization - Disabled
+       * JsonSerialization - Disabled
+       * XmlSerialization - Enabled
+
+2014-09-01 13:46:14,284 [1] INFO  NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration [(null)] <(null)> - Number of messages found: 2
+2014-09-01 13:46:14,287 [1] INFO  NServiceBus.Config.InfrastructureServices [(null)] <(null)> - Infrastructure service NServiceBus.AutomaticSubscriptions.IAutoSubscriptionStrategy was found in the container and will be used instead of the default
+2014-09-01 13:46:14,292 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.IFinalizeConfiguration completed in 0.11 s
+2014-09-01 13:46:15,406 [1] INFO  NServiceBus.Installation.PerformanceMonitorUsersInstaller [(null)] <(null)> - Skipped adding user 'smt68\student' to group 'Performance Monitor Users' because the user is already in group.
+2014-09-01 13:46:15,980 [12] INFO  MessageSender [(null)] <(null)> - Sent message.
+2014-09-01 13:56:14,942 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfiguration completed in 0.21 s
+2014-09-01 13:56:15,075 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.INeedInitialization completed in 0.00 s
+2014-09-01 13:56:15,091 [1] INFO  NServiceBus.Licensing.LicenseManager [(null)] <(null)> - Trial for Particular Service Platform is still active, trial expires on 15/09/2014. Configuring NServiceBus to run in trial mode.
+2014-09-01 13:56:15,152 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.INeedInitialization completed in 0.08 s
+2014-09-01 13:56:15,158 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature TimeoutManager has been explicitly disabled
+2014-09-01 13:56:15,161 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature SecondLevelRetries has been explicitly disabled
+2014-09-01 13:56:17,300 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfigurationIsFinalized completed in 2.15 s
+2014-09-01 13:56:17,361 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Features: 
+Audit [4.6.4] - Enabled
+AutoSubscribe [4.6.4] - Enabled
+BinarySerialization [4.6.4] - Controlled by category Serializers
+BsonSerialization [4.6.4] - Controlled by category Serializers
+JsonSerialization [4.6.4] - Controlled by category Serializers
+XmlSerialization [4.6.4] - Controlled by category Serializers
+MsmqTransport [4.6.4] - Enabled
+Gateway [4.6.4] - Disabled
+TimeoutManager [4.6.4] - Disabled
+Sagas [4.6.4] - Disabled
+SecondLevelRetries [4.6.4] - Disabled
+StorageDrivenPublisher [4.6.4] - Disabled
+MessageDrivenSubscriptions [4.6.4] - Enabled
+
+2014-09-01 13:56:17,388 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Feature categories: 
+   - Serializers
+       * BinarySerialization - Disabled
+       * BsonSerialization - Disabled
+       * JsonSerialization - Disabled
+       * XmlSerialization - Enabled
+
+2014-09-01 13:56:17,444 [1] INFO  NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration [(null)] <(null)> - Number of messages found: 2
+2014-09-01 13:56:17,449 [1] INFO  NServiceBus.Config.InfrastructureServices [(null)] <(null)> - Infrastructure service NServiceBus.AutomaticSubscriptions.IAutoSubscriptionStrategy was found in the container and will be used instead of the default
+2014-09-01 13:56:17,454 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.IFinalizeConfiguration completed in 0.15 s
+2014-09-01 13:56:20,533 [1] INFO  NServiceBus.Installation.PerformanceMonitorUsersInstaller [(null)] <(null)> - Skipped adding user 'smt68\student' to group 'Performance Monitor Users' because the user is already in group.
+2014-09-01 13:56:21,379 [12] INFO  MessageSender [(null)] <(null)> - Sent message.
+2014-09-01 13:57:05,621 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfiguration completed in 0.18 s
+2014-09-01 13:57:05,739 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.INeedInitialization completed in 0.00 s
+2014-09-01 13:57:05,749 [1] INFO  NServiceBus.Licensing.LicenseManager [(null)] <(null)> - Trial for Particular Service Platform is still active, trial expires on 15/09/2014. Configuring NServiceBus to run in trial mode.
+2014-09-01 13:57:05,803 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.INeedInitialization completed in 0.06 s
+2014-09-01 13:57:05,809 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature TimeoutManager has been explicitly disabled
+2014-09-01 13:57:05,812 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Default feature SecondLevelRetries has been explicitly disabled
+2014-09-01 13:57:07,325 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.IWantToRunBeforeConfigurationIsFinalized completed in 1.52 s
+2014-09-01 13:57:07,360 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Features: 
+Audit [4.6.4] - Enabled
+AutoSubscribe [4.6.4] - Enabled
+BinarySerialization [4.6.4] - Controlled by category Serializers
+BsonSerialization [4.6.4] - Controlled by category Serializers
+JsonSerialization [4.6.4] - Controlled by category Serializers
+XmlSerialization [4.6.4] - Controlled by category Serializers
+MsmqTransport [4.6.4] - Enabled
+Gateway [4.6.4] - Disabled
+TimeoutManager [4.6.4] - Disabled
+Sagas [4.6.4] - Disabled
+SecondLevelRetries [4.6.4] - Disabled
+StorageDrivenPublisher [4.6.4] - Disabled
+MessageDrivenSubscriptions [4.6.4] - Enabled
+
+2014-09-01 13:57:07,373 [1] INFO  NServiceBus.Features.FeatureInitializer [(null)] <(null)> - Feature categories: 
+   - Serializers
+       * BinarySerialization - Disabled
+       * BsonSerialization - Disabled
+       * JsonSerialization - Disabled
+       * XmlSerialization - Enabled
+
+2014-09-01 13:57:07,417 [1] INFO  NServiceBus.Unicast.Config.FinalizeUnicastBusConfiguration [(null)] <(null)> - Number of messages found: 2
+2014-09-01 13:57:07,421 [1] INFO  NServiceBus.Config.InfrastructureServices [(null)] <(null)> - Infrastructure service NServiceBus.AutomaticSubscriptions.IAutoSubscriptionStrategy was found in the container and will be used instead of the default
+2014-09-01 13:57:07,426 [1] INFO  NServiceBus.Configure [(null)] <(null)> - Invocation of NServiceBus.Config.IFinalizeConfiguration completed in 0.10 s
+2014-09-01 13:57:08,510 [1] INFO  NServiceBus.Installation.PerformanceMonitorUsersInstaller [(null)] <(null)> - Skipped adding user 'smt68\student' to group 'Performance Monitor Users' because the user is already in group.
+2014-09-01 13:57:09,131 [13] INFO  MessageSender [(null)] <(null)> - Sent message.
