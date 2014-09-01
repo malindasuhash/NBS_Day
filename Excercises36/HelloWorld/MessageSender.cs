@@ -15,6 +15,8 @@ namespace HelloWorld
                     SaySomething = "SAY SOMETHING!!"
                 };
 
+            Bus.OutgoingHeaders["Username"] = "malinda"; // Authorisation
+
             Bus.Send(msg);
 
             LogManager.GetLogger("MessageSender").Info("Sent message.");
