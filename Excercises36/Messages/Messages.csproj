@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="EncryptedAttribute.cs" />
     <Compile Include="ExpiresAttribute.cs" />
     <Compile Include="MessageAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

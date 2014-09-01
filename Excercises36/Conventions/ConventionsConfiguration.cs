@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using NServiceBus;
 
 namespace Conventions
@@ -11,7 +12,17 @@ namespace Conventions
             Configure.Instance.DefiningMessagesAs(type =>
                      type.GetCustomAttributes(true)
                          .Any(t => t.GetType().Name == "MessageAttribute"))
-                .DefiningTimeToBeReceivedAs(SetupTTL);
+                .DefiningTimeToBeReceivedAs(SetupTTL)
+                .DefiningEncryptedPropertiesAs(EncryptionInfo)
+                .RijndaelEncryptionService();
+        }
+
+        private bool EncryptionInfo(PropertyInfo propertyInfo)
+        {
+            var p = propertyInfo.GetCustomAttributes(true)
+                                .Any(t => t.GetType().Name.Equals("EncryptedAttribute"));
+
+            return p;
         }
 
         private TimeSpan SetupTTL(Type t)
