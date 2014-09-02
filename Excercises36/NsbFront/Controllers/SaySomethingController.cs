@@ -7,13 +7,20 @@ using Messages;
 
 namespace NsbFront.Controllers
 {
-    public class SaySomethingController : Controller
+    public class SaySomethingController : AsyncController
     {
-        public ActionResult Index()
+        public void IndexAsync()
         {
-            MvcApplication.Bus.Send<Request>(m => m.SaySomething = "Said something from web.");
-
-            return Content("Message sent!");
+            MvcApplication.Bus.Send<RequestWithResponse>(m => m.SaySomething = "Said something from web. Ex")
+                .Register<int>(response =>
+                    {
+                        AsyncManager.Parameters["response"] = response.ToString();
+                    });
         }
+
+       public ActionResult IndexCompleted(string response)
+       {
+           return Content("Request from server " + response);
+       }
     }
 }

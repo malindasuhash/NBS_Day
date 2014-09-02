@@ -14,15 +14,15 @@ namespace Messages
 
         public void Handle(object message)
         {
-            // Gets the username from the header.
-            // Returns null if the item is not found.
-            var username = Bus.GetMessageHeader(message, "Username");
+            //// Gets the username from the header.
+            //// Returns null if the item is not found.
+            //var username = Bus.GetMessageHeader(message, "Username");
 
-            if (!IsAuthorised(username))
-            {
-                LogManager.GetLogger("Auth").Warn("User not authorized.");
-                Bus.DoNotContinueDispatchingCurrentMessageToHandlers();
-            }
+            //if (!IsAuthorised(username))
+            //{
+            //    LogManager.GetLogger("Auth").Warn("User not authorized.");
+            //    Bus.DoNotContinueDispatchingCurrentMessageToHandlers();
+            //}
         }
 
         private bool IsAuthorised(string user)
