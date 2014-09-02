@@ -19,12 +19,17 @@ namespace HelloWorldServer
 
             Configure.With()
                      .DefaultBuilder()
-                     .RunCustomAction(() => Configure.Instance.Configurer.ConfigureComponent<SaySomething>(DependencyLifecycle.SingleInstance));
+                     .RunCustomAction(() => Configure.Instance.Configurer.ConfigureComponent<ISaySomething>(SaySomethingFactory, DependencyLifecycle.SingleInstance));
         }
 
         public void SpecifyOrder(Order order)
         {
             order.SpecifyFirst<Auth>();
+        }
+
+        private ISaySomething SaySomethingFactory()
+        {
+            return new SaySomething();
         }
     }
 }
