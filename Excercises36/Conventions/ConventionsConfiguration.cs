@@ -5,6 +5,12 @@ using NServiceBus;
 
 namespace Conventions
 {
+    /// <summary>
+    /// This is a way to concetralise configuration information.
+    /// </summary>
+    /// <remarks>
+    /// Note that NSB use lots of reflection.(not a big fan)
+    /// </remarks>
     public class ConventionsConfiguration : IWantToRunBeforeConfiguration
     {
         public void Init()

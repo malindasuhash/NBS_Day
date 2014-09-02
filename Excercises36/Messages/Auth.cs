@@ -3,6 +3,11 @@ using NServiceBus.Logging;
 
 namespace Messages
 {
+    /// <summary>
+    /// Handles all the messages.
+    /// Not sure whether this is a good thing or not. This handler captures
+    /// all the messages received by the receiver. 
+    /// </summary>
     public class Auth : IHandleMessages<object>
     {
         public IBus Bus { get; set; }
