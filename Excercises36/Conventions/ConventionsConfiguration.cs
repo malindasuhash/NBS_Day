@@ -14,7 +14,8 @@ namespace Conventions
                          .Any(t => t.GetType().Name == "MessageAttribute"))
                 .DefiningTimeToBeReceivedAs(SetupTTL)
                 .DefiningEncryptedPropertiesAs(EncryptionInfo)
-                .RijndaelEncryptionService();
+                .RijndaelEncryptionService(); // Adding the configuration here as this configuration is common
+            // for both sender and receiver.
         }
 
         private bool EncryptionInfo(PropertyInfo propertyInfo)

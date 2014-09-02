@@ -70,6 +70,10 @@
       <Project>{05e8dc9e-3f7e-4dc7-9100-0d893aee6862}</Project>
       <Name>Messages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SecurityServiceAdapter\SecurityServiceAdapter.csproj">
+      <Project>{1579dfad-d5f0-4052-bd58-741790e436b1}</Project>
+      <Name>SecurityServiceAdapter</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

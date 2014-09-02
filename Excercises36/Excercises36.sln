@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldServer", "HelloWo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conventions", "Conventions\Conventions.csproj", "{20F93B32-A0DB-4467-9F71-DD4EF55BE5E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityServiceAdapter", "SecurityServiceAdapter\SecurityServiceAdapter.csproj", "{1579DFAD-D5F0-4052-BD58-741790E436B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{20F93B32-A0DB-4467-9F71-DD4EF55BE5E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20F93B32-A0DB-4467-9F71-DD4EF55BE5E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20F93B32-A0DB-4467-9F71-DD4EF55BE5E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1579DFAD-D5F0-4052-BD58-741790E436B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1579DFAD-D5F0-4052-BD58-741790E436B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1579DFAD-D5F0-4052-BD58-741790E436B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1579DFAD-D5F0-4052-BD58-741790E436B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
