@@ -6,7 +6,6 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using NServiceBus;
-using NServiceBus.Installation.Environments;
 
 namespace NsbFront
 {
@@ -26,22 +25,12 @@ namespace NsbFront
 
             Configure.Serialization.Xml(s => s.Namespace("http://acme.com/"));
 
-            //Bus = Configure.With()
-            //       .DefaultBuilder()
-            //       .RijndaelEncryptionService() // Encryption
-            //       .UseTransport<Msmq>() // Msmq as the queuing system.
-            //       .UnicastBus() // Creates the bus
-            //       .SendOnly();
-
             Bus = Configure.With()
-                .DefaultBuilder()
-                .RijndaelEncryptionService()
-                .InMemoryFaultManagement()
-                .UseTransport<Msmq>()
-                .UnicastBus()
-                .CreateBus()
-                .Start(() => Configure.Instance
-                    .ForInstallationOn<Windows>().Install());
+                   .DefaultBuilder()
+                   .RijndaelEncryptionService() // Encryption
+                   .UseTransport<Msmq>() // Msmq as the queuing system.
+                   .UnicastBus() // Creates the bus
+                   .SendOnly();
         }
     }
 }
